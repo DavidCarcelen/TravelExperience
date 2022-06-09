@@ -8,10 +8,12 @@ import java.util.List;
     //atributo
     private List<Usuario> listaUsuarios = new ArrayList<>();
 
+        //getter
         public List<Usuario> getListaUsuarios() {
             return listaUsuarios;
         }
 
+        //setter
         public void setListaUsuarios(List<Usuario> listaUsuarios) {
             this.listaUsuarios = listaUsuarios;
         }
@@ -20,13 +22,18 @@ import java.util.List;
             listaUsuarios.add(usuario);
         }
         
-        //metodo de llamar usuario
+        //metodo de llamar usuario por el indice
         public Usuario get(int idx) {
             if(idx>=0 && idx<this.listaUsuarios.size()) {
                 return this.listaUsuarios.get(idx);
             }else{
                 return null;
             }
+        }
+
+        //
+        public List<Usuario> getAll(){
+            return this.listaUsuarios;
         }
 
         /*
@@ -36,13 +43,25 @@ import java.util.List;
     }
 
         */
-
+    //metod que devuelve el tamaño del almacen de usuarios
     public int numeroUsuarios(){
         return listaUsuarios.size();
     }
 
-    public List<Usuario> listadeUsuarios(){
-        return listaUsuarios;
+    //metodo para añadir Usuarios al almacen de Usuarios
+    public void AlmacenUsuarios(){
+        listaUsuarios.add(new Usuario(1L, "nombre1", "email1@email.com", "descripcion1", 25));
+        listaUsuarios.add(new Usuario(2L, "nombre2", "email2@email.com", "descripcion2", 30));
+    }
+
+    //metodo del getUserById
+    public Usuario getUserporId(Long id) {
+        for (Usuario user: listaUsuarios) {
+            if(user.getId() == id){
+                return user;
+            }
+        }
+        return null;
     }
 
 

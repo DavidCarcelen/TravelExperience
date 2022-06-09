@@ -3,6 +3,8 @@ package org.deep;
 import org.deep.models.Fotografia;
 import org.deep.models.Usuario;
 import org.deep.persistence.AlmacenUsuarios;
+import org.deep.persistence.AlmacenUsuariosInf;
+import org.deep.servicios.GestorUsuarios;
 
 import java.util.Date;
 
@@ -16,22 +18,21 @@ public class App
     static AlmacenUsuarios almacenUsuarios = new AlmacenUsuarios();
     public static void main( String[] args )
     {
-        //instanciar objetos de la clase usuario
-        Usuario usu1 = new Usuario("nombre1", "email1@email.com", "descripcion1 sobre mi", 33);
-        Usuario usu2 = new Usuario("nombre2", "email2@email.com", "descripcion2 sobre mi", 34);
-        Usuario usu3 = new Usuario("nombre3", "email3@email.com", "descripcion3 sobre mi", 35);
+        ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 
-        //intanciar objetos de la clase AlmacenUsuarios
-        AlmacenUsuarios alm1  = new AlmacenUsuarios();
+        StudentServiceInf servicioEstudiantes = context.getBean(StudentServiceInf.class);
 
-        //añadir usuarios al arrayList
-        alm1.addUsuarios(usu1);
-        alm1.addUsuarios(usu2);
-        alm1.addUsuarios(usu3);
-        //printa el numero total de usuarios
-        System.out.println(alm1.numeroUsuarios());
-        //printa la lista de usuarios
-        System.out.println(alm1.listadeUsuarios());
+        Student unEstudiante = servicioEstudiantes.getStudentByIndex(3);
+        System.out.println(unEstudiante);
+
+        //Llamar a contexto de spring, config spring(@Bean)
+
+        //Pedir bean de gestor Usuarios
+
+        //Pasar un nuevo usuario a almacenar
+
+
+
 
     }
     //crear metodo para subir Foto
