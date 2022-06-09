@@ -1,4 +1,4 @@
-package models;
+package org.deep.models;
 
 import java.util.Date;
 

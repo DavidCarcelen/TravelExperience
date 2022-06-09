@@ -1,6 +1,4 @@
-package models;
-
-import java.util.Date;
+package org.deep.models;
 
 public class Viaje {
     //Atributos

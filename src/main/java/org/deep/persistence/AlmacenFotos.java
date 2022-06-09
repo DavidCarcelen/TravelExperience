@@ -1,7 +1,6 @@
-package persistence;
+package org.deep.persistence;
 
-import models.Fotografia;
-import models.Usuario;
+import org.deep.models.Fotografia;
 
 import java.util.ArrayList;
 import java.util.List;

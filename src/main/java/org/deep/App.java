@@ -1,12 +1,10 @@
-package org.example;
+package org.deep;
 
-import models.Fotografia;
-import models.Usuario;
-import persistence.AlmacenFotos;
-import persistence.AlmacenUsuarios;
+import org.deep.models.Fotografia;
+import org.deep.models.Usuario;
+import org.deep.persistence.AlmacenUsuarios;
 
 import java.util.Date;
-import java.util.List;
 
 /**
  * Hello world!

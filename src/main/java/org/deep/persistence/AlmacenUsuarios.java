@@ -1,6 +1,6 @@
-package persistence;
+package org.deep.persistence;
 
-import models.Usuario;
+import org.deep.models.Usuario;
 import java.util.ArrayList;
 import java.util.List;
 
