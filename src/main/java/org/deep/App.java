@@ -1,10 +1,14 @@
 package org.deep;
 
+import org.deep.configuration.Configuracion;
 import org.deep.models.Fotografia;
 import org.deep.models.Usuario;
 import org.deep.persistence.AlmacenUsuarios;
 import org.deep.persistence.AlmacenUsuariosInf;
 import org.deep.servicios.GestorUsuarios;
+import org.deep.servicios.GestorUsuariosInf;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.Date;
 
@@ -18,12 +22,12 @@ public class App
     static AlmacenUsuarios almacenUsuarios = new AlmacenUsuarios();
     public static void main( String[] args )
     {
-        ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+        ApplicationContext context = new AnnotationConfigApplicationContext(Configuracion.class);
 
-        StudentServiceInf servicioEstudiantes = context.getBean(StudentServiceInf.class);
+        GestorUsuariosInf gestorUsuarios = context.getBean(GestorUsuariosInf.class);
 
-        Student unEstudiante = servicioEstudiantes.getStudentByIndex(3);
-        System.out.println(unEstudiante);
+        Usuario unUsuario = gestorUsuarios.getUserById(1L);
+        System.out.println(unUsuario);
 
         //Llamar a contexto de spring, config spring(@Bean)
 
