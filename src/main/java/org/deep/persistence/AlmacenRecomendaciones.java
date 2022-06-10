@@ -13,9 +13,12 @@ public class AlmacenRecomendaciones {
         listaRecomendaciones.add(new Recomendacion("Bob", "me encanta"));
         listaRecomendaciones.add(new Recomendacion("Mike", "horrible"));
 
-        public void addRecomendacion(Recomendacion reco){
-            listaRecomendaciones.add(reco);
-        }
 
     }
+
+    public void addRecomendacion(Recomendacion reco) {
+        listaRecomendaciones.add(reco);
+    }
+
+
 }
