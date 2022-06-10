@@ -1,10 +1,13 @@
 package org.deep.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Viaje {
     //Atributos
     private String nombre;
-    //private Sitio[];
-    //Sitio no existe todavia
+    private List<Sitio> listaSitios = new ArrayList<>();
+
 //constructor
 
     public Viaje(String nombre) {
