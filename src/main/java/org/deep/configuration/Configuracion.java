@@ -1,5 +1,7 @@
 package org.deep.configuration;
 
+import org.deep.persistence.AlmacenUsuarios;
+import org.deep.persistence.AlmacenUsuariosInf;
 import org.deep.servicios.GestorUsuarios;
 import org.deep.servicios.GestorUsuariosInf;
 import org.springframework.context.annotation.Bean;
@@ -11,12 +13,19 @@ import javax.inject.Inject;
 public class Configuracion {
 
     @Bean
-    public GestorUsuarios createGestorBean() {
-        return new GestorUsuarios();
+    public AlmacenUsuarios createAlamcenBean(){
+        return new AlmacenUsuarios();
     }
 
     @Inject
-    GestorUsuariosInf gestorUsuarios;
+    AlmacenUsuarios almacen;
+
+    @Bean
+    public GestorUsuarios createGestorBean() {
+        GestorUsuarios gestor = new GestorUsuarios();
+        gestor.setAlmacenUsuarios(almacen);
+        return gestor;
+    }
 
 
 

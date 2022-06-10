@@ -23,9 +23,13 @@ public class GestorUsuariosTest {
 
     @Test
     public void storeUser() {
+
         Usuario usu1 = new Usuario(0L,"nombre23", "nom23@email.com", "descripcion3", 35);
         gestor1.storeUser(usu1);
         System.out.println(repo.getAll());
+
+        assertTrue(usu1.getId()>0);
+        assertTrue(repo.getAll().size()>0);
     }
 
     @Test

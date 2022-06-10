@@ -26,7 +26,10 @@ public class App
 
         GestorUsuariosInf gestorUsuarios = context.getBean(GestorUsuariosInf.class);
 
-        Usuario unUsuario = gestorUsuarios.getUserById(1L);
+        Usuario newUser = new Usuario(0L,"nombre23", "nom23@email.com", "descripcion3", 35);
+        gestorUsuarios.storeUser(newUser);
+
+        Usuario unUsuario = gestorUsuarios.getUserById(3L);
         System.out.println(unUsuario);
 
         //Llamar a contexto de spring, config spring(@Bean)
@@ -39,6 +42,7 @@ public class App
 
 
     }
+
     //crear metodo para subir Foto
     public void subirFoto(){
         Fotografia lafoto = new Fotografia("Foto Paris", new Date(2022-06-01), "localizacion1");
