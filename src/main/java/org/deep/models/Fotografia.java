@@ -39,4 +39,13 @@ public class Fotografia {
     public void setLocalizacion(String localizacion) {
         this.localizacion = localizacion;
     }
+
+    @Override
+    public String toString() {
+        return "Fotografia{" +
+                "descripcion='" + descripcion + '\'' +
+                ", fecha=" + fecha +
+                ", localizacion='" + localizacion + '\'' +
+                '}';
+    }
 }
