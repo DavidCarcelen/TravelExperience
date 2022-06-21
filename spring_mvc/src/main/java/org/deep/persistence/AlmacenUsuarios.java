@@ -7,17 +7,21 @@ import java.util.List;
 
 public class AlmacenUsuarios {
     //atributo
-    private List<Usuario> listaUsuarios = new ArrayList<>();
-
-    //metodo para añadir Usuarios al almacen de Usuarios
-    public AlmacenUsuarios() {
-        listaUsuarios.add(new Usuario(1L, "nombre1", "email1@email.com", "descripcion1", 25));
-        listaUsuarios.add(new Usuario(2L, "nombre2", "email2@email.com", "descripcion2", 30));
+    private static List<Usuario> listaUsuarios = new ArrayList<>();
+    static{
+        listaUsuarios.add(new Usuario("nombre1", "nombre1@email.com","sobre mi nombre1", 33, "222" ));
+        listaUsuarios.add(new Usuario("nombre2", "nombre2@email.com","sobre mi descripcion 2",34, "333" ));
+        listaUsuarios.add(new Usuario("nombre3", "nombre3@email.com","descripcion nombre3", 35, "444" ));
     }
 
-    public void addUsuarios(Usuario usuario) {
-        usuario.setId((long)listaUsuarios.size()+1);
+    //metodo para añadir Usuarios al almacen de Usuarios
+   List<Usuario> usuarios = listaUsuarios;
+
+
+
+    public static boolean addUsuarios(Usuario usuario) {
         listaUsuarios.add(usuario);
+        return true;
     }
 
     //metodo de llamar usuario por el indice
@@ -29,9 +33,9 @@ public class AlmacenUsuarios {
         }
     }
 
-    //
-    public List<Usuario> getAll() {
-        return this.listaUsuarios;
+    //Metodo que devuelve la lista de USUArios
+    public static List<Usuario> getAll() {
+        return listaUsuarios;
     }
 
 
