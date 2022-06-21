@@ -9,24 +9,31 @@
   <title>Alta usuario</title>
 </head>
 <body>
-<div class="container form-group">
-  <h1>${mensaje}</h1>
-  <form>
+<h1>${mensaje}</h1>
+  <div class="container form-group">
+        <div>
+            <p>${error}</p>
+        </div>
+  <form action="" method = "POST">
     <div class="form-group">
       <label for="nombre">Nombre:</label>
-      <input type="text" class="form-control" name="nombre" placeholder="Escriba su nombre">
+      <input type="text" class="form-control" name="nombre" placeholder="Escriba su nombre" value="${unUsuario.nombre}">
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
-      <input type="email" class="form-control"name="email" placeholder="ejemplo@ejemplo.com">
+      <input type="email" class="form-control"name="email" placeholder="ejemplo@ejemplo.com" value="${unUsuario.email}">
     </div>
     <div class="form-group">
-      <label for="email">Telefono:</label>
-      <input type="number" class="form-control" name="numero" placeholder="Escribe numero de telefono">
+      <label for="sobreMi">Sobre mi:</label>
+      <input type="text" class="form-control" name="sobreMi" placeholder="Escribe breve descripcion" value="${unUsuario.sobreMi}">
+    </div>
+    <div class="form-group">
+      <label for="edad">Edad:</label>
+      <input type="number" class="form-control" name="edad" placeholder="Introduce tu edad" value="${unUsuario.edad}">
     </div>
     <div class="form-group">
       <label for="password">Password:</label>
-      <input type="password" class="form-control" name="password" placeholder="**********">
+      <input type="password" class="form-control" name="password" placeholder="El password debe tener minimo 5 caracteres" value="${unUsuario.password}">
     </div><br>
     <button type="submit" class="btn btn-danger">Alta Usuario</button>
   </form>

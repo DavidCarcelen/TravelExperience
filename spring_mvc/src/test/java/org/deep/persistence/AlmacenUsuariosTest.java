@@ -10,7 +10,7 @@ public class AlmacenUsuariosTest {
     AlmacenUsuarios repo = new AlmacenUsuarios();
     @Test
     public void addUsuarios() {
-        Usuario usu1 = new Usuario(0L,"nombre23", "nom23@email.com", "descripcion3", 35);
+        Usuario usu1 = new Usuario("nombre23","nom23@email.com",  "descripcion3", 35, "111");
         repo.addUsuarios(usu1);
         System.out.println(repo.getAll());
     }

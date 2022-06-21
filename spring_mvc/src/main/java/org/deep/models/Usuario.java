@@ -10,16 +10,27 @@ public class Usuario {
     private String email;
     private String sobreMi;
     private int edad;
+    private String password;
     public List<Fotografia> fotografias = new ArrayList<>();
 
-    //constructor
+    //constructor con todos los atributos
+    public Usuario(Long id, String nombre, String email, String sobreMi, int edad, String password) {
 
-    public Usuario(Long id, String nombre, String email, String sobreMi, int edad) {
-        this.id = id;
         this.nombre = nombre;
         this.email = email;
         this.sobreMi = sobreMi;
         this.edad = edad;
+        this.password = password;
+    }
+    //constructor con los atributos que necesitamos para crear un Usuario
+
+
+    public Usuario(String nombre, String email, String sobreMi, int edad, String password) {
+        this.nombre = nombre;
+        this.email = email;
+        this.sobreMi = sobreMi;
+        this.edad = edad;
+        this.password = password;
     }
 
     //getters y setters
@@ -62,6 +73,14 @@ public class Usuario {
         this.edad = edad;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     //metodo toString
 
 
@@ -73,6 +92,7 @@ public class Usuario {
                 ", email='" + email + '\'' +
                 ", sobreMi='" + sobreMi + '\'' +
                 ", edad=" + edad +
+                ", password=" + password +
                 ", fotografias=" + fotografias +
                 '}';
     }

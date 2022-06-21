@@ -24,7 +24,7 @@ public class App
 
         GestorUsuariosInf gestorUsuarios = context.getBean(GestorUsuariosInf.class);
 
-        Usuario newUser = new Usuario(0L,"nombre23", "nom23@email.com", "descripcion3", 35);
+        Usuario newUser = new Usuario("nombre23", "nom23@email.com", "descripcion3", 35,  "111");
         gestorUsuarios.storeUser(newUser);
 
         Usuario unUsuario = gestorUsuarios.getUserById(3L);
