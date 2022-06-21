@@ -24,7 +24,7 @@ public class GestorUsuariosTest {
     @Test
     public void storeUser() {
 
-        Usuario usu1 = new Usuario(0L,"nombre23", "nom23@email.com", "descripcion3", 35);
+        Usuario usu1 = new Usuario("nombre23","nom23@email.com", "descripcion sobre mi1", 35, "222");
         gestor1.storeUser(usu1);
         System.out.println(repo.getAll());
 
