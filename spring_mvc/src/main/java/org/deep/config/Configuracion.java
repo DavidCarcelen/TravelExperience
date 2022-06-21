@@ -1,7 +1,9 @@
 package org.deep.config;
 
+import org.deep.persistence.AlmacenRecomendaciones;
 import org.deep.persistence.AlmacenUsuarios;
 import org.deep.persistence.AlmacenUsuariosInf;
+import org.deep.servicios.GestorRecomencaciones;
 import org.deep.servicios.GestorUsuarios;
 import org.deep.servicios.GestorUsuariosInf;
 import org.springframework.context.annotation.Bean;
@@ -27,6 +29,17 @@ public class Configuracion {
         return gestor;
     }
 
+    @Bean
+    public AlmacenRecomendaciones createRecomBean(){
+        return new AlmacenRecomendaciones();
+    }
+
+    @Bean
+    public GestorRecomencaciones createGestorRecomBean() {
+        return new GestorRecomencaciones();}
+
+    }
 
 
-}
+
+

@@ -46,5 +46,9 @@ public class Recomendacion {
                 ", puntos=" + puntos +
                 '}';
     }
+    /*public boolean isValid(){
+        if(lugar!=null && opinion !=null && puntos>0 && puntos<=5) return true;
+        else return false;
+    }*/
 }
 

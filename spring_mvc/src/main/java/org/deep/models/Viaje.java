@@ -2,23 +2,52 @@ package org.deep.models;
 
 public class Viaje {
     //Atributos
-    private String nombre;
-    //private Sitio[];
-    //Sitio no existe todavia
-//constructor
+    private String lugar;
 
-    public Viaje(String nombre) {
-        this.nombre = nombre;
-        //this.sitio = sitio;
+    private String opinion;
 
+    //private Integer puntos;
+
+    public Viaje(String lugar, String opinion, int puntos) {
+        this.lugar = lugar;
+        this.opinion = opinion;
+        //this.puntos = puntos;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getLugar() {
+        return lugar;
     }
 
-    //public void setDescripcion(String descripcion) {
-     //   this.descripcion = descripcion;
+    @Override
+    public String toString() {
+        return "Viaje{" +
+                "lugar='" + lugar + '\'' +
+                ", opinion='" + opinion + '\'' +
+                //", puntos=" + puntos +
+                '}';
     }
+
+    public void setLugar(String lugar) {
+        this.lugar = lugar;
+    }
+
+    public String getOpinion() {
+        return opinion;
+    }
+
+    public void setOpinion(String opinion) {
+        this.opinion = opinion;
+    }
+
+    /*public int getPuntos() {
+        return puntos;
+    }
+
+    public void setPuntos(int puntos) {
+        this.puntos = puntos;
+    }*/
+
+
+}
 
 

@@ -12,7 +12,7 @@ public class AlmacenRecomendaciones {
 
     private List<Recomendacion> listaRecomendaciones= new ArrayList<>();
 
-    private AlmacenRecomendaciones() {
+    public AlmacenRecomendaciones() {
         listaRecomendaciones.add(new Recomendacion("Barcelona", "muy bueno", 5));
         listaRecomendaciones.add(new Recomendacion("Cuenca", "está lejos",  4));
     }
