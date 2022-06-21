@@ -13,7 +13,7 @@ public class AlmacenFotosTest {
 
     @Test
     public void addFotos() {
-        Fotografia foto1 = new Fotografia("Foto3", new Date(2020-07-02), "Suiza");
+        Fotografia foto1 = new Fotografia("Foto3", "2020-07-02", "Suiza","https://www.foto3");
         repo.addFotos(foto1);
         System.out.println(repo.getAllPhotos());
     }

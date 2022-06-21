@@ -3,12 +3,14 @@ package org.deep.servicios;
 import org.deep.models.Fotografia;
 import org.deep.persistence.AlmacenFotos;
 
+import java.util.List;
+
 public class GestorFotografias implements GestorFotografiasInf{
 
     private AlmacenFotos listaFotos;
 
-    public AlmacenFotos getListaFotos(){
-        return listaFotos;
+    public List<Fotografia> getListaFotos(){
+        return listaFotos.getAllPhotos();
     }
 
     public void setListaFotos(AlmacenFotos listaFotos) {

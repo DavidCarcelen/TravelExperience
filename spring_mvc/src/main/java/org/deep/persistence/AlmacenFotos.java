@@ -10,8 +10,8 @@ public class AlmacenFotos implements AlmacenFotosInf{
     private List<Fotografia> almacenFotos = new ArrayList<>();
 
     public AlmacenFotos() {
-        almacenFotos.add(new Fotografia("Foto1", new Date(2022-06-01), "Francia"));
-        almacenFotos.add(new Fotografia("Foto2", new Date(2022-03-01), "Perú"));
+        almacenFotos.add(new Fotografia("Foto1", "2022-06-01", "Francia", "https://www.foto1"));
+        almacenFotos.add(new Fotografia("Foto2", "2022-03-01", "Perú", "https://www.foto2"));
     }
 
     public Fotografia getPhotoByLugar(String localizacion){
