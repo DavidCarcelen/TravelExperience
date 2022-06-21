@@ -43,7 +43,7 @@ public class App
 
     //crear metodo para subir Foto
     public void subirFoto(){
-        Fotografia lafoto = new Fotografia("Foto Paris", new Date(2022-06-01), "localizacion1");
+        Fotografia lafoto = new Fotografia("Foto Paris", "2022-06-01", "localizacion1","https://www.foto3");
         Usuario usuario1 = almacenUsuarios.get(1);
         usuario1.fotografias.add(lafoto);
         //AlmacenFotos.add(lafoto);

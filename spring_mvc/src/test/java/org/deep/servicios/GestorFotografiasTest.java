@@ -24,7 +24,8 @@ public class GestorFotografiasTest {
     }
     @Test
     public void storePhoto(){
-        Fotografia foto1 = new Fotografia("Foto4", new Date(2021-07-02), "España");
+//        Fotografia foto1 = new Fotografia("Foto4", new Date(2021-07-02), "España","https://www.foto4");
+        Fotografia foto1 = new Fotografia("Foto4", "2021-07-02", "España","https://www.foto4");
         gestor.storePhoto(foto1);
         System.out.println(repo.getAllPhotos());
         assertTrue(repo.getAllPhotos().size()>0);
