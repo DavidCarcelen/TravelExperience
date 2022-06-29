@@ -44,6 +44,9 @@ public class Viaje {
                 ", puntuacion=" + puntuacion +
                 '}';
     }
+
+    public Viaje() {
+    }
 }
 
 

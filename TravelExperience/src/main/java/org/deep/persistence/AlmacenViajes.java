@@ -17,4 +17,9 @@ public class AlmacenViajes {
     public List<Viaje> getAll() {
         return viajes;
     }
+
+    public void addViaje(Viaje viaje) {
+        viajes.add(viaje);
+
+    }
 }

@@ -8,8 +8,7 @@ import java.util.List;
 public class GestorViajes {
 
     AlmacenViajes repo;
-    /*public void setListaViajes(AlmacenViajes almacenViajes) {
-    }*/
+
 
     public void setRepo(AlmacenViajes repo) {
         this.repo = repo;
@@ -20,4 +19,7 @@ public class GestorViajes {
 
     }
 
+    public void storeViaje(Viaje viaje) {
+        repo.addViaje(viaje);
+    }
 }
