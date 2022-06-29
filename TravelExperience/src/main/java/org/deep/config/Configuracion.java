@@ -3,9 +3,11 @@ package org.deep.config;
 import org.deep.persistence.AlmacenFotos;
 import org.deep.persistence.AlmacenUsuarios;
 import org.deep.persistence.AlmacenUsuariosInf;
+import org.deep.persistence.AlmacenViajes;
 import org.deep.servicios.GestorFotografias;
 import org.deep.servicios.GestorUsuarios;
 import org.deep.servicios.GestorUsuariosInf;
+import org.deep.servicios.GestorViajes;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
@@ -46,6 +48,23 @@ public class Configuracion {
         GestorFotografias gestorFotografias = new GestorFotografias();
         gestorFotografias.setListaFotos(almacenFotos);
         return gestorFotografias;
+    }
+
+    @Bean
+    public AlmacenViajes createAlamcenViajesBean(){
+        return new AlmacenViajes();
+    }
+
+    @Inject
+    @Lazy
+    AlmacenViajes almacenViajes;
+
+
+    @Bean
+    public GestorViajes createGestorViajesBean() {
+        GestorViajes gestorViajes = new GestorViajes();
+        gestorViajes.setRepo(almacenViajes);
+        return gestorViajes;
     }
 
 
