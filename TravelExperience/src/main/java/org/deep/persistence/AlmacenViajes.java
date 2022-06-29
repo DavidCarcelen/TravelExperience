@@ -19,7 +19,8 @@ public class AlmacenViajes {
     }
 
     public void addViaje(Viaje viaje) {
-        viajes.add(viaje);
+       // if (viaje.isValid())
+            viajes.add(viaje);
 
     }
 }

@@ -1,9 +1,20 @@
 package org.deep.models;
 
+import javax.validation.constraints.*;
+
 public class Viaje {
     //Atributos
+    @NotNull(message = "Lugar debe tener un valor")
+    @NotBlank(message = "Lugar debe tener un valor")
+    @NotEmpty(message = "Lugar debe tener un valor")
     private String lugar;
+
+    @NotNull(message = "Opinion debe tener un valor")
+    @NotBlank(message = "Opinion debe tener un valor")
+    @NotEmpty(message = "Opinion debe tener un valor")
     private String opinion;
+    @Min(value=1)
+    @Max(value=5)
     private int puntuacion;
 
     public Viaje(String lugar, String opinion, int puntuacion) {
@@ -47,6 +58,12 @@ public class Viaje {
 
     public Viaje() {
     }
+
+    /*public boolean isValid(){
+        if (this.lugar!=null && this.opinion!=null && this.puntuacion >0 && this.puntuacion <6 )
+            return true;
+        else return false;
+    }*/
 }
 
 

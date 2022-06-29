@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -35,7 +36,7 @@ public class RecomController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<Message> postNewRecom(@RequestBody Viaje viaje) {
+    public ResponseEntity<Message> postNewRecom(@Valid @RequestBody Viaje viaje) {
         System.out.println(viaje);
         viajeSrv.storeViaje(viaje);
         return new ResponseEntity<>(new Message("OK"), HttpStatus.CREATED);
