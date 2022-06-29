@@ -10,18 +10,18 @@ public class Fotografia {
     @NotBlank(message = "Descripción debe tener un valor")
     @NotEmpty(message = "Descripción debe tener un valor")
     private String descripcion;
-    @NotNull(message = "Localización debe tener un valor")
-    @NotBlank(message = "Localización debe tener un valor")
-    @NotEmpty(message = "Descripción debe tener un valor")
+    @NotNull(message = "Fecha debe tener un valor")
+    @NotBlank(message = "Fecha debe tener un valor")
+    @NotEmpty(message = "Fecha debe tener un valor")
     private String fecha;
     @NotNull(message = "Localización debe tener un valor")
     @NotBlank(message = "Localización debe tener un valor")
     @NotEmpty(message = "Descripción debe tener un valor")
     private String localizacion;
 
-    @NotNull(message = "Localización debe tener un valor")
-    @NotBlank(message = "Localización debe tener un valor")
-    @NotEmpty(message = "Descripción debe tener un valor")
+    @NotNull(message = "Url debe tener un valor")
+    @NotBlank(message = "Url debe tener un valor")
+    @NotEmpty(message = "Url debe tener un valor")
     private String url;
 
     public Fotografia(String descripcion, String fecha, String localizacion, String url) {
