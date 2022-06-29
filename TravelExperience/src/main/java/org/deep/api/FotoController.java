@@ -33,7 +33,7 @@ public class FotoController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public ResponseEntity<Message> postNewPhoto(@RequestBody Fotografia foto) {
+    public ResponseEntity<Message> postNewPhoto(@Valid @RequestBody Fotografia foto) {
         System.out.println(foto);
         fotoServ.storePhoto(foto);
         return new ResponseEntity<>(new Message("OK"), HttpStatus.CREATED);
