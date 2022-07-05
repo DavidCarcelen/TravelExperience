@@ -24,7 +24,11 @@ public class FotoController {
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Fotografia> getAllFotos() {
-        return fotoServ.getListaFotos();
+        try {
+            return fotoServ.getListaFotos();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @RequestMapping(

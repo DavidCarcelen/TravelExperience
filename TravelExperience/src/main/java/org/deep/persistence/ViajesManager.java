@@ -15,8 +15,22 @@ public class ViajesManager {
     public ViajesManager() {
     }
 
-    public List<Viaje> getViajes() throws Exception {
-        List<Viaje> listaV = em.createQuery("FROM Viajes").getResultList();
+    /**
+     * Devuelve la lista de viajes de bbdd
+     * @return
+     * @throws Exception
+     */
+    public List<Viaje> getAll() throws Exception {
+        List<Viaje> listaV = em.createQuery("FROM Viaje").getResultList();
         return listaV;
+    }
+
+
+
+    /**
+     * Metodo que añade un viaje
+     * @param viaje
+     */
+    public void addViaje(Viaje viaje) {
     }
 }

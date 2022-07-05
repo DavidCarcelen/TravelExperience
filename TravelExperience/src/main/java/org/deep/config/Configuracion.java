@@ -31,6 +31,29 @@ public class Configuracion {
     @Lazy
     UsuariosManager usuariosManager;
 
+    //Bean para FotosManager
+    @Bean
+    public FotosManager createFotosManager(){
+        return new FotosManager();
+    }
+
+    //Inject del bean FOtosManager
+    @Inject
+    @Lazy
+    FotosManager fotosManager;
+
+
+    //Crear bean de Viajes
+    @Bean
+    public ViajesManager createViajesManager(){
+        return new ViajesManager();
+    }
+
+    //Inject de viajes
+     @Inject
+     @Lazy
+     ViajesManager viajesManager;
+
     @Bean
     public GestorUsuarios createGestorBean() {
         GestorUsuarios gestor = new GestorUsuarios();
@@ -51,24 +74,15 @@ public class Configuracion {
     @Bean
     public GestorFotografias createGestorFotosBean(){
         GestorFotografias gestorFotografias = new GestorFotografias();
-        gestorFotografias.setListaFotos(almacenFotos);
+        gestorFotografias.setRepoFotos(fotosManager);
         return gestorFotografias;
     }
-
-    @Bean
-    public AlmacenViajes createAlamcenViajesBean(){
-        return new AlmacenViajes();
-    }
-
-    @Inject
-    @Lazy
-    AlmacenViajes almacenViajes;
 
 
     @Bean
     public GestorViajes createGestorViajesBean() {
         GestorViajes gestorViajes = new GestorViajes();
-        gestorViajes.setRepo(almacenViajes);
+        gestorViajes.setRepo(viajesManager);
         return gestorViajes;
     }
 
