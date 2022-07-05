@@ -1,24 +1,33 @@
 package org.deep.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+@Entity
+@Table
 public class Fotografia {
     //Atributos
+    @Column
     @NotNull(message = "Descripción debe tener un valor")
     @NotBlank(message = "Descripción debe tener un valor")
     @NotEmpty(message = "Descripción debe tener un valor")
     private String descripcion;
+    @Column
     @NotNull(message = "Fecha debe tener un valor")
     @NotBlank(message = "Fecha debe tener un valor")
     @NotEmpty(message = "Fecha debe tener un valor")
     private String fecha;
+    @Column
     @NotNull(message = "Localización debe tener un valor")
     @NotBlank(message = "Localización debe tener un valor")
     @NotEmpty(message = "Descripción debe tener un valor")
     private String localizacion;
 
+    @Column
     @NotNull(message = "Url debe tener un valor")
     @NotBlank(message = "Url debe tener un valor")
     @NotEmpty(message = "Url debe tener un valor")

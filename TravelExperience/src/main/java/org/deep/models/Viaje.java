@@ -1,18 +1,26 @@
 package org.deep.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.validation.constraints.*;
 
+@Entity
+@Table
 public class Viaje {
     //Atributos
+    @Column
     @NotNull(message = "Lugar debe tener un valor")
     @NotBlank(message = "Lugar debe tener un valor")
     @NotEmpty(message = "Lugar debe tener un valor")
     private String lugar;
 
+    @Column
     @NotNull(message = "Opinion debe tener un valor")
     @NotBlank(message = "Opinion debe tener un valor")
     @NotEmpty(message = "Opinion debe tener un valor")
     private String opinion;
+    @Column
     @Min(value=1)
     @Max(value=5)
     private int puntuacion;

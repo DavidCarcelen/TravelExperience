@@ -1,16 +1,28 @@
 package org.deep.models;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table
 public class Usuario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     //Atributos
+    @Column
     private Long id;
+    @Column
     private String nombre;
+    @Column
     private String email;
+    @Column
     private String sobreMi;
+    @Column
     private int edad;
+    @Column
     private String password;
+    @Transient
     public List<Fotografia> fotografias = new ArrayList<>();
 
     //constructor con todos los atributos
