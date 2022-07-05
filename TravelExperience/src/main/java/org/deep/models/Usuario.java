@@ -10,7 +10,7 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     //Atributos
-    @Column
+
     private Long id;
     @Column
     private String nombre;
@@ -22,8 +22,21 @@ public class Usuario {
     private int edad;
     @Column
     private String password;
-    @Transient
+    @ManyToMany
+    @JoinTable(
+            name = "foto_user",
+            joinColumns = @JoinColumn(name = "user", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "foto", nullable = false)
+    )
     public List<Fotografia> fotografias = new ArrayList<>();
+
+    @ManyToMany
+    @JoinTable(
+            name = "viaje_user",
+            joinColumns = @JoinColumn(name = "user", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "viaje", nullable = false)
+    )
+    public List<Viaje> viajes = new ArrayList<>();
 
     //constructor con todos los atributos
     public Usuario(Long id, String nombre, String email, String sobreMi, int edad, String password) {

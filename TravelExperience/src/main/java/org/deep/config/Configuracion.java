@@ -1,12 +1,8 @@
 package org.deep.config;
 
-import org.deep.persistence.AlmacenFotos;
-import org.deep.persistence.AlmacenUsuarios;
-import org.deep.persistence.AlmacenUsuariosInf;
-import org.deep.persistence.AlmacenViajes;
+import org.deep.persistence.*;
 import org.deep.servicios.GestorFotografias;
 import org.deep.servicios.GestorUsuarios;
-import org.deep.servicios.GestorUsuariosInf;
 import org.deep.servicios.GestorViajes;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -27,9 +23,18 @@ public class Configuracion {
     AlmacenUsuarios almacen;
 
     @Bean
+    public UsuariosManager createUsuariosManager(){
+        return new UsuariosManager();
+    }
+
+    @Inject
+    @Lazy
+    UsuariosManager usuariosManager;
+
+    @Bean
     public GestorUsuarios createGestorBean() {
         GestorUsuarios gestor = new GestorUsuarios();
-        gestor.setAlmacenUsuarios(almacen);
+        gestor.setRepo(usuariosManager);
         return gestor;
     }
 

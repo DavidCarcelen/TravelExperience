@@ -1,13 +1,17 @@
 package org.deep.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.*;
 
 @Entity
 @Table
 public class Viaje {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //Atributos
+
+    private Long id;
     //Atributos
     @Column
     @NotNull(message = "Lugar debe tener un valor")

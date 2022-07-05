@@ -1,8 +1,6 @@
 package org.deep.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -10,6 +8,12 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table
 public class Fotografia {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //Atributos
+
+    private Long id;
     //Atributos
     @Column
     @NotNull(message = "Descripción debe tener un valor")
